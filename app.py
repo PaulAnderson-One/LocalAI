@@ -71,6 +71,7 @@ if prompt:
                 # print(chunk.choices[0].delta.content, flush=True, end="")
 
     except Exception as e:
+#        print(e)
         st.chat_message("ai").markdown("Something went wrong 😭")
 
     # with st.chat_message("ai"):

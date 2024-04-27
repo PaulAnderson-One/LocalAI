@@ -7,9 +7,8 @@ def get_stock_prices(ticker, days):
     try:
         # Fetch stock data
         stock_data = yf.download(ticker, period=f"{days}d", interval="1d")
-
         # Format the DateTimeIndex to dd/mm/yyyy format
-        stock_data.index = stock_data.index.strftime("%d/%m/%Y")
+        stock_data.index = stock_data.index#.strftime("%d/%m/%Y")
 
         # Convert to JSON format, ensuring dates are strings
         stock_json = stock_data.to_json(orient="index")
@@ -24,7 +23,7 @@ def get_stock_prices(ticker, days):
 
 
 # Example usage:
-ticker = "AAPL"  # Example ticker
-days = 30  # Example number of days
-prices = get_stock_prices(ticker, days)
-print(prices)
+#ticker = "AAPL"  # Example ticker
+#days = 30  # Example number of days
+#prices = get_stock_prices(ticker, days)
+#print(prices)
